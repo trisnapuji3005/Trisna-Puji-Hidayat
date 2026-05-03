@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trisna Puji H</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
+body{color:#fff;background:#0f172a;overflow-x:hidden}
+
+/* HERO VIDEO ONLY AT TOP */
+.hero-video{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+}
+.hero-video video{
+  position:absolute;
+  width:100%;height:100%;object-fit:cover;
+}
+.hero-overlay{
+  position:absolute;width:100%;height:100%;
+  background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(0,0,0,0.3));
+}
+
+/* HEADER */
+header{
+  position:fixed;top:0;width:100%;z-index:10;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 50px;
+  background:rgba(0,0,0,0.3);backdrop-filter:blur(12px);
+}
+header h1{cursor:pointer;font-size:20px}
+nav a{
+  margin-left:20px;color:#fff;text-decoration:none;font-weight:500;
+  position:relative;
+}
+nav a::after{
+  content:'';position:absolute;left:0;bottom:-5px;width:0;height:2px;background:#00f7ff;transition:.3s;
+}
+nav a:hover::after{width:100%}
+
+/* HERO CONTENT */
+.hero-content{
+  position:relative;z-index:2;height:100%;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+}
+.hero-content img{
+  width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid #fff;margin-bottom:20px;
+}
+.hero-content h2{font-size:42px}
+.hero-content p{opacity:.8;margin-top:10px}
+
+/* MAIN SECTIONS */
+.section{
+  padding:100px 50px;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  position:relative;
+}
+.section::before{
+  content:'';position:absolute;width:200px;height:200px;background:rgba(0,255,255,0.1);border-radius:50%;top:50px;left:50px;filter:blur(80px);
+}
+.section::after{
+  content:'';position:absolute;width:200px;height:200px;background:rgba(0,100,255,0.1);border-radius:50%;bottom:50px;right:50px;filter:blur(80px);
+}
+.container{max-width:1100px;margin:auto;position:relative;z-index:2}
+
+/* BUTTONS PREMIUM */
+.buttons{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px}
+.btn{
+  padding:12px 25px;border-radius:30px;border:none;
+  background:linear-gradient(45deg,#00f7ff,#0072ff);
+  color:#fff;cursor:pointer;font-weight:600;
+  box-shadow:0 5px 20px rgba(0,255,255,0.3);
+  transition:.3s;
+}
+.btn:hover{transform:translateY(-5px) scale(1.05)}
+
+/* CONTENT BOX */
+.content-box{display:none;margin-top:20px;padding:20px;border-radius:10px;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px)}
+
+/* CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px}
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:20px;border-radius:15px;
+  transition:.3s;cursor:pointer;
+}
+.card:hover{transform:translateY(-10px)}
+.card img{width:100%;border-radius:10px;margin-bottom:10px}
+
+/* SKILL */
+.skill{margin:20px 0}
+.bar{background:#1e293b;border-radius:20px;overflow:hidden}
+.progress{height:10px;background:linear-gradient(90deg,#00f7ff,#0072ff);width:0;transition:2s}
+
+/* FOOTER */
+footer{text-align:center;padding:30px;background:#020617;margin-top:50px}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1 onclick="scrollToTop()">Trisna Puji Hidayat</h1>
+  <nav>
+    <a href="#about">Tentang</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#skills">Skill</a>
+    <a href="#contact">Kontak</a>
+  </nav>
+</header>
+
+<!-- HERO VIDEO -->
+<section class="hero-video">
+  <video autoplay muted loop>
+    <source src="https://motionbgs.com/media/5332/circuit-board.960x540.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <img src="https://i.imgur.com/dpQ2QF8.png">
+    <h2>Trisna Puji Hidayat</h2>
+    <p>Personal Branding</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+<div class="container">
+<h2>Tentang Saya</h2>
+<p>
+<br>Saya adalah pribadi yang reflektif dan lebih sering memahami dunia melalui sudut pandang sendiri.
+Ekspresi diri banyak dituangkan melalui karya, terutama lukisan dengan tema yang dalam, karena itu menjadi cara paling jujur untuk menyampaikan emosi.
+Ketertarikan pada hal-hal yang memiliki nilai estetika dan konsep yang kuat membuat saya cukup memperhatikan detail, baik dalam visual maupun penyampaian.
+Keinginan untuk terus berkembang mendorong saya mengikuti berbagai kesempatan, seperti mengikuti lomba, serta membuat project atau campaign yang dapat menunjukkan ide-ide yang dimiliki.
+Personal branding bagi saya penting dan bukan hanya terlihat baik, tetapi juga memiliki makna dan kesan yang kuat.
+Bukan tipe yang menyukai hal-hal yang terlalu biasa atau template, saya lebih menghargai sesuatu yang terasa hidup, berkarakter, dan memiliki nilai. Karena itu, saya cukup kritis terhadap apa yang dibuat maupun yang dilihat.
+Secara keseluruhan, ini adalah proses membentuk versi terbaik dari diri melalui karya, pengalaman, dan cara mengekspresikan diri kepada dunia.</p>
+
+<div class="buttons">
+<button class="btn" onclick="showContent('prestasi')">Prestasi</button>
+<button class="btn" onclick="showContent('skill')">Skill</button>
+<button class="btn" onclick="showContent('pengalaman')">Pengalaman</button>
+</div>
+
+<div id="prestasi" class="content-box">
+<b>Duta<br></b>
+1. Ambasador PGSD<br>
+2. Duta Persada Nusantara<br>
+3. Duta Pesona Indonesia<br>
+4. Duta Pelopor Pendidikan Nasional<br>
+<br>
+1. juara harapan 2 puisi (duniapenulis_)<br>
+<br>
+<b>Olimpiade<br></b>
+1. Medali emas Olimpiade bahasa inggris tingkat umum (pandawa competition 14)<br>
+2. Medali emas Olimpiade pengetahuan umum tingkat umum (pandawa competition 14)<br>
+3. Medali emas Olimpiade wawasan kebangsaan tingkat umum (pandawa competition 14)<br>
+4. Medali emas Olimpiade bahasa inggris tingkat umum (Indonesia kompetisi OSSN 14)<br>
+5. Juara 3 + Medali emas Olimpiade bahasa inggris tingkat perguruan tinggi (alberta competition OSR 2026)<br>
+6. Medali perak Olimpiade biologi tingkat perguruan tinggi (alberta competition OSR 2026)<br>
+7. Juara 2 + Medali emas Olimpiade bahasa Indonesia tingkat perguruan tinggi (indonesian youth festival x institut pertanian bogor)<br>
+8. Medali emas Olimpiade bahasa inggris tingkat perguruan tinggi (indonesian youth festival x institut pertanian bogor)<br>
+</div>
+<div id="skill" class="content-box">
+1. Desain grafis<br>
+2. Video editing untuk konten visual sederhana<br>
+3. Videografi dasar menggunakan perangkat sederhana<br>
+4. Fotografi tingkat dasar (untuk dokumentasi sederhana)<br>
+5. Seni lukis/gambar, kerajinan (disertakan referensi)<br>
+</div>
+<div id="pengalaman" class="content-box">
+SMP:<br>
+1. pengurus osis<br>
+2. pramuka penggalang terap<br>
+3. teknik komputer<br>
+4. paduan suara<br>
+SMA:<br>
+1. Pramuka penegak Bantara<br>
+2. Teknik informasi komunikasi<br>
+SMA:<br>
+Salah satu perancang kostum lomba fashion show (juara 1)<br>
+Koordinator drama untuk pentas seni (viewer terbanyak)<br>
+-Sutradara, Penulis skenario, Editor + sound designer<br>
+</div>
+
+</div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+<div class="container">
+<h2>Portfolio</h2>
+<div class="grid">
+
+<div class="card">
+<img src=" isi link foto ">
+<p>Project 1</p>
+</div>
+
+<div class="card">
+<img src=" isi link foto ">
+<p>Project 2</p>
+</div>
+
+<div class="card">
+<img src=" isi link foto ">
+<p>Project 3</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+<div class="container">
+<h2>Skill Saya</h2>
+
+<div class="skill">
+<p>Kreativitas</p>
+<div class="bar"><div class="progress" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<p>Public Speaking</p>
+<div class="bar"><div class="progress" style="width:80%"></div></div>
+</div>
+
+<div class="skill">
+<p>Leadership</p>
+<div class="bar"><div class="progress" style="width:80%"></div></div>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+<div class="container">
+<h2>Kontak</h2>
+<p>Email: Trisnapuji3005@email.com</p>
+<p>Instagram: @tp_hidayat30</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Personal Branding Trisna</p>
+</footer>
+
+<script>
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
+function showContent(id){
+  document.querySelectorAll('.content-box').forEach(e=>e.style.display='none');
+  document.getElementById(id).style.display='block';
+}
+window.onload=()=>{
+  document.querySelectorAll('.progress').forEach(bar=>{
+    let w=bar.style.width;bar.style.width=0;
+    setTimeout(()=>{bar.style.width=w},300);
+  });
+}
+</script>
+
+</body>
+</html>
