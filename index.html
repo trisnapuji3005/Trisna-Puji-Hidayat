@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Personal Branding Trisna Puji Hidayat</title>
+
+  <style>
+    :root {
+      --black: #050505;
+      --white: #ffffff;
+      --blue-dark: #06152f;
+      --blue-main: #0b72ff;
+      --blue-soft: #eef7ff;
+      --blue-light: #38bdf8;
+      --text: #1e293b;
+      --muted: #64748b;
+      --shadow: 0 25px 70px rgba(11, 114, 255, 0.18);
+      --radius: 30px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(11, 114, 255, 0.18), transparent 27%),
+        radial-gradient(circle at 85% 18%, rgba(56, 189, 248, 0.16), transparent 25%),
+        radial-gradient(circle at 60% 90%, rgba(11, 114, 255, 0.13), transparent 30%),
+        linear-gradient(135deg, #ffffff 0%, #edf6ff 50%, #ffffff 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background-image:
+        linear-gradient(rgba(11, 114, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 114, 255, 0.055) 1px, transparent 1px);
+      background-size: 42px 42px;
+      animation: gridMove 18s linear infinite;
+    }
+
+    @keyframes gridMove {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 84px 84px;
+      }
+    }
+
+    .bg-animation {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(11, 114, 255, 0.14);
+      animation: floatCircle 9s ease-in-out infinite alternate;
+    }
+
+    .circle-one {
+      width: 220px;
+      height: 220px;
+      left: -80px;
+      top: 150px;
+    }
+
+    .circle-two {
+      width: 160px;
+      height: 160px;
+      right: 9%;
+      top: 260px;
+      background: rgba(56, 189, 248, 0.18);
+      animation-delay: 1s;
+    }
+
+    .circle-three {
+      width: 280px;
+      height: 280px;
+      right: -130px;
+      bottom: 120px;
+      animation-delay: 1.6s;
+    }
+
+    @keyframes floatCircle {
+      from {
+        transform: translateY(0) scale(1);
+      }
+      to {
+        transform: translateY(70px) scale(1.12);
+      }
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 60px;
+      padding: 0 7%;
+      background: rgba(5, 5, 5, 0.94);
+      backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .brand {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0.4px;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 14px;
+    }
+
+    .nav-menu a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 10px 18px;
+      border-radius: 999px;
+      transition: 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      background: linear-gradient(135deg, var(--blue-main), var(--blue-light));
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(11, 114, 255, 0.32);
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 100px 7%;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-inner {
+      width: 100%;
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .hero {
+      padding-top: 125px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-block;
+      padding: 10px 18px;
+      margin-bottom: 24px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(11, 114, 255, 0.18);
+      color: var(--blue-dark);
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: 0 14px 34px rgba(11, 114, 255, 0.12);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.05;
+      color: var(--blue-dark);
+      margin-bottom: 24px;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: var(--blue-main);
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 900;
+      transition: 0.35s ease;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--blue-main), #0752d8);
+      box-shadow: 0 18px 38px rgba(11, 114, 255, 0.32);
+    }
+
+    .btn-secondary {
+      color: var(--blue-dark);
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(11, 114, 255, 0.20);
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+    }
+
+    .visual-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .phone-frame {
+      width: min(330px, 82vw);
+      aspect-ratio: 9 / 16;
+      padding: 12px;
+      border-radius: 42px;
+      background: linear-gradient(145deg, #06152f, var(--blue-main), #ffffff);
+      box-shadow: 0 42px 100px rgba(6, 21, 47, 0.27);
+      animation: phoneFloat 5s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phone-frame::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      width: 102px;
+      height: 22px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: #020617;
+      z-index: 2;
+    }
+
+    .phone-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 32px;
+      display: block;
+    }
+
+    @keyframes phoneFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-18px);
+      }
+    }
+
+    .profile-card {
+      width: min(380px, 88vw);
+      padding: 26px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.76);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(11, 114, 255, 0.16);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card img {
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 7px solid var(--white);
+      margin-bottom: 16px;
+      box-shadow: 0 18px 42px rgba(11, 114, 255, 0.30);
+    }
+
+    .profile-card h2 {
+      color: var(--blue-dark);
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title span {
+      display: inline-block;
+      color: var(--blue-main);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title h2 {
+      color: var(--blue-dark);
+      font-size: clamp(34px, 4vw, 54px);
+      margin-bottom: 16px;
+    }
+
+    .section-title p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .portfolio-card {
+      max-width: 1080px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.76);
+      backdrop-filter: blur(22px);
+      border-radius: 38px;
+      border: 1px solid rgba(11, 114, 255, 0.16);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .tab-input {
+      display: none;
+    }
+
+    .main-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      padding: 14px;
+      background: rgba(6, 21, 47, 0.96);
+    }
+
+    .main-tabs label {
+      color: var(--white);
+      text-align: center;
+      padding: 17px 16px;
+      border-radius: 20px;
+      font-size: 15px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .main-tabs label:hover {
+      background: linear-gradient(135deg, var(--blue-main), var(--blue-light));
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(11, 114, 255, 0.32);
+    }
+
+    #tab-tentang:checked ~ .main-tabs label[for="tab-tentang"],
+    #tab-prestasi:checked ~ .main-tabs label[for="tab-prestasi"],
+    #tab-pengalaman:checked ~ .main-tabs label[for="tab-pengalaman"],
+    #tab-skill:checked ~ .main-tabs label[for="tab-skill"] {
+      background: linear-gradient(135deg, var(--blue-main), var(--blue-light));
+      box-shadow: 0 16px 34px rgba(11, 114, 255, 0.32);
+    }
+
+    .tab-panels {
+      padding: 46px;
+    }
+
+    .panel {
+      display: none;
+      animation: panelFade 0.45s ease;
+    }
+
+    @keyframes panelFade {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #tab-tentang:checked ~ .tab-panels .panel-tentang,
+    #tab-prestasi:checked ~ .tab-panels .panel-prestasi,
+    #tab-pengalaman:checked ~ .tab-panels .panel-pengalaman,
+    #tab-skill:checked ~ .tab-panels .panel-skill {
+      display: block;
+    }
+
+    .panel h3 {
+      color: var(--blue-dark);
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .isi-box {
+      width: 100%;
+      min-height: 190px;
+      padding: 28px;
+      border-radius: 28px;
+      background: #ffffff;
+      border: 1px solid rgba(11, 114, 255, 0.16);
+      box-shadow: 0 20px 50px rgba(11, 114, 255, 0.10);
+      color: #1e293b;
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .isi-box p {
+      margin-bottom: 14px;
+    }
+
+    .isi-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .isi-box ul {
+      padding-left: 22px;
+    }
+
+    .isi-box li {
+      margin-bottom: 10px;
+    }
+
+    .skill-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .skill-input {
+      display: none;
+    }
+
+    .skill-tabs label {
+      padding: 14px 22px;
+      border-radius: 999px;
+      color: var(--blue-dark);
+      background: #ffffff;
+      border: 1px solid rgba(11, 114, 255, 0.18);
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .skill-tabs label:hover {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--blue-main), var(--blue-light));
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(11, 114, 255, 0.24);
+    }
+
+    #skill-hard:checked ~ .skill-tabs label[for="skill-hard"],
+    #skill-soft:checked ~ .skill-tabs label[for="skill-soft"] {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--blue-main), var(--blue-light));
+      box-shadow: 0 16px 34px rgba(11, 114, 255, 0.24);
+    }
+
+    .skill-content {
+      display: none;
+    }
+
+    #skill-hard:checked ~ .skill-hard-content,
+    #skill-soft:checked ~ .skill-soft-content {
+      display: block;
+      animation: panelFade 0.45s ease;
+    }
+
+    .contact-grid {
+      max-width: 940px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .contact-card {
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      padding: 38px;
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.76);
+      backdrop-filter: blur(22px);
+      border: 1px solid rgba(11, 114, 255, 0.16);
+      box-shadow: var(--shadow);
+      transition: 0.35s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 36px 88px rgba(11, 114, 255, 0.24);
+    }
+
+    .contact-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--blue-main), var(--blue-light));
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      margin-bottom: 22px;
+    }
+
+    .contact-card h3 {
+      color: var(--blue-dark);
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      line-height: 1.8;
+      word-break: break-word;
+    }
+
+    footer {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 22px 7%;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 920px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 5%;
+      }
+
+      .hero {
+        padding-top: 150px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .main-tabs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      section {
+        padding: 86px 5%;
+      }
+
+      .main-tabs {
+        grid-template-columns: 1fr;
+      }
+
+      .tab-panels {
+        padding: 28px;
+      }
+
+      .isi-box {
+        padding: 22px;
+      }
+
+      .brand {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-animation">
+    <div class="circle circle-one"></div>
+    <div class="circle circle-two"></div>
+    <div class="circle circle-three"></div>
+  </div>
+
+  <header class="navbar">
+    <a href="#beranda" class="brand">Trisna Puji Hidayat</a>
+
+    <nav class="nav-menu">
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="beranda">
+    <div class="section-inner">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-label">Personal Branding Portfolio</div>
+
+          <h1>
+            Halo, Saya <span>Trisna Puji Hidayat</span>
+          </h1>
+
+          <p>
+            Website ini menjadi ruang personal branding untuk menampilkan profil,
+            prestasi, pengalaman, skill, serta kontak saya.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#tentang" class="btn btn-primary">Lihat Profil</a>
+            <a href="#kontak" class="btn btn-secondary">Hubungi Saya</a>
+          </div>
+        </div>
+
+        <div class="visual-area">
+          <div class="phone-frame">
+            <!-- GANTI LINK VIDEO DI BAWAH INI -->
+            <video autoplay muted loop playsinline>
+              <source src="https://motionbgs.com/media/8626/celestial-veil.304x540.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="profile-card">
+            <!-- GANTI LINK FOTO DI BAWAH INI -->
+            <img
+              src="https://i.imgur.com/dpQ2QF8.png"
+              alt="Foto Profil"
+            >
+
+            <h2>Trisna Puji Hidayat</h2>
+
+            <p>
+              Personal branding, portofolio, prestasi, pengalaman, dan kemampuan profesional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tentang">
+    <div class="section-inner">
+      <div class="section-title">
+        <span>Tentang</span>
+        <h2>Profil Personal</h2>
+        <p>
+          Pilih menu di bawah untuk membuka Tentang Saya, Prestasi, Pengalaman, atau Skill.
+        </p>
+      </div>
+
+      <div class="portfolio-card">
+        <input type="radio" name="main-tab" id="tab-tentang" class="tab-input" checked>
+        <input type="radio" name="main-tab" id="tab-prestasi" class="tab-input">
+        <input type="radio" name="main-tab" id="tab-pengalaman" class="tab-input">
+        <input type="radio" name="main-tab" id="tab-skill" class="tab-input">
+
+        <div class="main-tabs">
+          <label for="tab-tentang">Tentang Saya</label>
+          <label for="tab-prestasi">Prestasi</label>
+          <label for="tab-pengalaman">Pengalaman</label>
+          <label for="tab-skill">Skill</label>
+        </div>
+
+        <div class="tab-panels">
+          <div class="panel panel-tentang">
+            <h3>Tentang Saya</h3>
+
+            <div class="isi-box">
+              <!-- ISI TENTANG SAYA DI SINI -->
+
+              <p>
+                Saya adalah pribadi yang reflektif dan lebih sering memahami dunia melalui sudut pandang sendiri.
+                Ekspresi diri banyak dituangkan melalui karya, terutama lukisan dengan tema yang dalam, karena itu menjadi cara paling jujur untuk menyampaikan emosi.
+                Ketertarikan pada hal-hal yang memiliki nilai estetika dan konsep yang kuat membuat saya cukup memperhatikan detail, baik dalam visual maupun penyampaian.
+                Keinginan untuk terus berkembang mendorong saya mengikuti berbagai kesempatan, seperti mengikuti lomba, serta membuat project atau campaign yang dapat menunjukkan ide-ide yang dimiliki.
+                Personal branding bagi saya penting dan bukan hanya terlihat baik, tetapi juga memiliki makna dan kesan yang kuat.
+                Bukan tipe yang menyukai hal-hal yang terlalu biasa atau template, saya lebih menghargai sesuatu yang terasa hidup, berkarakter, dan memiliki nilai.
+                Karena itu, saya cukup kritis terhadap apa yang dibuat maupun yang dilihat.
+                Secara keseluruhan, ini adalah proses membentuk versi terbaik dari diri melalui karya, pengalaman, dan cara mengekspresikan diri kepada dunia.
+              </p>
+
+              <p>
+                Saya memiliki semangat untuk terus belajar, berkembang, dan
+                membangun pengalaman yang bermanfaat untuk masa depan.
+              </p>
+
+              <!-- BATAS AKHIR ISI TENTANG SAYA -->
+            </div>
+          </div>
+
+          <div class="panel panel-prestasi">
+            <h3>Prestasi</h3>
+
+            <div class="isi-box">
+              <!-- ISI PRESTASI DI SINI -->
+
+              <ul>
+                <li>Ambassador PGSD STKIP PGRI Bangkalan 2026.</li>
+                <li>Duta Pesona Indonesia BATCH VII.</li>
+                <li>Duta Persada Nusantara BATCH V.</li>
+                <li>Duta Peopor Pendidikan Nasional Batch III.</li>
+                <br>
+                <li>Juara harapan 2 puisi (duniapenulis_)</li>
+                <br>
+Olimpiade<br>
+1. Medali emas Olimpiade bahasa inggris tingkat umum (Pandawa Competition 14)<br>
+2. Medali emas Olimpiade pengetahuan umum tingkat umum (Pandawa Competition 14)<br>
+3. Medali emas Olimpiade wawasan kebangsaan tingkat umum (Pandawa Competition 14)<br>
+4. Medali emas Olimpiade bahasa inggris tingkat umum (Indonesia Kompetisi OSSN 14)<br>
+5. Juara 3 + Medali emas Olimpiade bahasa inggris tingkat perguruan tinggi (Alberta Competition OSR 2026)<br>
+6. Medali perak Olimpiade biologi tingkat perguruan tinggi (Alberta Competition OSR 2026)<br>
+7. Juara 2 + Medali emas Olimpiade bahasa Indonesia tingkat perguruan tinggi (Indonesian Youth Festival x Institut Pertanian Bogor)<br>
+8. Medali emas Olimpiade bahasa inggris tingkat perguruan tinggi (Indonesian Youth Festival x Institut Pertanian Bogor)<br>
+9. Medali emas Olimpiade bahasa inggris tingkat perguruan tinggi (Indonesian Youth Festival x Universitas Negeri Yogyakarta)<br>
+10. Medali emas Olimpiade bahasa indonesia  tingkat perguruan tinggi (Indonesian Youth Festival x Universitas Negeri Yogyakarta)<br>
+              </ul>
+
+              <!-- BATAS AKHIR ISI PRESTASI -->
+            </div>
+          </div>
+
+          <div class="panel panel-pengalaman">
+            <h3>Pengalaman</h3>
+
+            <div class="isi-box">
+              <!-- ISI PENGALAMAN DI SINI -->
+
+              <p>
+                SMP:<br>
+1. pengurus osis<br>
+2. pramuka penggalang terap<br>
+3. teknik komputer<br>
+4. paduan suara<br>
+<br>
+SMA:<br>
+1. Pramuka penegak Bantara<br>
+2. Teknik informasi komunikasi<br>
+<br>
+SMA:<br>
+Salah satu perancang kostum lomba fashion show (juara 1)<br>
+Koordinator drama untuk pentas seni (viewer terbanyak)<br>
+-Sutradara, Penulis skenario, Editor + sound designer<br>
+              </p>
+              <p>
+              </p>
+
+              <!-- BATAS AKHIR ISI PENGALAMAN -->
+            </div>
+          </div>
+
+          <div class="panel panel-skill">
+            <h3>Skill</h3>
+
+            <input type="radio" name="skill-tab" id="skill-hard" class="skill-input" checked>
+            <input type="radio" name="skill-tab" id="skill-soft" class="skill-input">
+
+            <div class="skill-tabs">
+              <label for="skill-hard">Hard Skill</label>
+              <label for="skill-soft">Soft Skill</label>
+            </div>
+
+            <div class="skill-content skill-hard-content">
+              <div class="isi-box">
+                <!-- ISI HARD SKILL DI SINI -->
+
+                <ul>
+                  <li>Desain grafis</li>
+                  <li>Editing video</li>
+                  <li>Pengelolaan media sosial</li>
+                  <li>Pembuatan konten kreatif</li>
+                  <li>Videografi dasar menggunakan perangkat sederhana</li>
+                  <li>Fotografi tingkat dasar (untuk dokumentasi sederhana)</li>
+                  <li>Seni lukis/gambar, kerajinan (dengan referensi)</li>
+                </ul>
+
+                <!-- BATAS AKHIR ISI HARD SKILL -->
+              </div>
+            </div>
+
+            <div class="skill-content skill-soft-content">
+              <div class="isi-box">
+                <!-- ISI SOFT SKILL DI SINI -->
+
+                <ul>
+                  <li>Kreativitas</li>
+                  <li>Public speaking</li>
+                  <li>Leadership</li>
+                  <li>Komunikasi efektif</li>
+                  <li>Kerja sama tim</li>
+                  <li>Manajemen waktu</li>
+                </ul>
+
+                <!-- BATAS AKHIR ISI SOFT SKILL -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="section-inner">
+      <div class="section-title">
+        <span>Kontak</span>
+        <h2>Hubungi Saya</h2>
+        <p>
+          Email dan Instagram saya
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <a href="mailto:trisnapujihidayat@email.com" class="contact-card">
+          <div class="contact-icon">✉</div>
+          <h3>Email</h3>
+          <p>trisnapuji3005@email.com</p>
+        </a>
+
+        <a href="https://www.instagram.com/tp_hidayat30/" target="_blank" class="contact-card">
+          <div class="contact-icon">◎</div>
+          <h3>Instagram</h3>
+          <p>@tp_hidayat30</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Personal Branding Trisna
+  </footer>
+</body>
+</html>
